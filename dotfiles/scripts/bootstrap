@@ -52,19 +52,17 @@ brew install homebrew/cask-fonts/font-fira-mono-for-powerline
 echo "Homebrew: installing binaries and other packages..."
 brew install ffmpeg
 brew install git
-brew install heroku/brew/heroku
-brew install httpie
-brew install imagemagick
+brew install qlmarkdown
 brew install mackup
-brew install mas
-brew install nginx
+cat > ~/.mackup.cfg << EOF
+[storage]
+engine = icloud
+directory = .config/mackup
+EOF
 brew install node
 brew install nvm
-brew install rename
-brew install tree
-brew install webkit2png
 brew install yarn
-
+brew install
 
 ###############################################################################
 # Run Homebrew cleanup to remove installation/cached files
@@ -74,68 +72,26 @@ brew cleanup
 
 
 ###############################################################################
-# Install Node Packages with NPM
-###############################################################################
-echo "Node: installing Yarn/NPM packages…"
-yarn global add @sanity/cli
-yarn global add @squarespace/server
-yarn global add contentful-cli
-yarn global add firebase-tools
-yarn global add http-server
-yarn global add imageoptim-cli
-yarn global add js-beautify
-yarn global add markdown-pdf
-yarn global add netlify-cli
-yarn global add now
-yarn global add svgo
-
-
-###############################################################################
 # Install applications with Homebrew Cask
 ###############################################################################
 echo "Homebrew Cask: installing apps..."
-brew cask install 1password
-brew cask install ableton-live-suite
-brew cask install adobe-creative-cloud
-brew cask install alfred
-brew cask install dash
-brew cask install docker
-# brew cask install dropbox
-brew cask install figma
-brew cask install firefox
-brew cask install framer-x
-brew cask install github
-brew cask install google-chrome
-brew cask install google-cloud-sdk
-brew cask install google-drive-file-stream
-brew cask install hyper
-brew cask install imageoptim
-brew cask install iina
-brew cask install iterm2
-brew cask install notion
-brew cask install nucleo
-brew cask install obs
-brew cask install postman
-brew cask install screenflow
-brew cask install skype
-brew cask install slack
-brew cask install spectacle
-brew cask install spotify
-brew cask install sourcetree
-brew cask install tor-browser
-brew cask install transmit
-brew cask install tunnelbear
-brew cask install visual-studio-code
-brew cask install whatsapp
+brew --cask install 1password
+brew --cask install docker
+# brew --cask install dropbox
+brew --cask install google-chrome
+brew --cask install google-drive-file-stream
+brew --cask install iterm2
+brew --cask install slack
+brew --cask install spotify
+brew --cask install visual-studio-code
+brew --cask install flycut
+brew --cask install miro
+brew --cask install zoomus
+brew --cask install telegram
+brew --cask install inkscape
+brew --cask install vlc
+brew --cask install tunnelblick
 
-
-###############################################################################
-# Execute installers downloaded with Homebrew Cask
-###############################################################################
-echo "Opening installers..."
-
-echo "Opening Installer: Adobe Creative Cloud"
-open /usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app/
 
 
 ###############################################################################
@@ -148,22 +104,27 @@ brew cask cleanup
 # Install applications with mas-cli (Mac App Store CLI)
 ###############################################################################
 echo "mas-cli: installing Mac App Store apps..."
-# Amphetamine
-mas install 937984704
-# DaisyDisk
-mas install 411643860
-# JPEGmini
-mas install 498944723
-# Mactracker
-mas install 430255202
-# Sip
-mas install 507257563
-# Speedtest
-mas install 1153157709
-# Twitter
-mas install 1482454543
+# xcode
+mas install 497799835
 # WiFi Explorer
 mas install 494803304
+#Moom
+mas install 419330170
+#WISO Steuer 2022
+mas install 1573428744
+#GarageBand
+mas install 682658836
+
+
+###############################################################################
+# Install java stuff etc...
+###############################################################################
+curl -s "https://get.sdkman.io" | bash
+sdk i java
+sdk i groovy
+sdk i gradle
+sdk i kotlin
+
 
 
 echo "macOS Config, Dev Tools, Apps are Done Setup!"

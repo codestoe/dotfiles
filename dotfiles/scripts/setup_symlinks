@@ -7,11 +7,12 @@
 ###############################################################################
 
 # Personal config
-PERSONAL_DIR=~/Dropbox/_config/dotfiles
+PERSONAL_DIR=$HOME'/Library/Mobile Documents/com~apple~CloudDocs/.config'
 
 cd ~
 
-echo "Linking local config to ~/Dropbox/_config dotfiles..."
+echo "Linking local config to ~/icloud/.config dotfiles..."
+
 
 rm -rf .gitconfig
 ln -s ${PERSONAL_DIR}/gitconfig .gitconfig

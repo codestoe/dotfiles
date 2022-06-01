@@ -1,9 +1,0 @@
-#!/bin/zsh
-
-###############################################################################
-# gitconfig
-###############################################################################
-
-[include]
-  path = ~/Dropbox/_config/dotfiles/gitconfig.personal
-  path = ~/Dropbox/_config/dotfiles-work/gitconfig.work
